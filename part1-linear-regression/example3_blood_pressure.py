@@ -1,26 +1,18 @@
-import pandas as pd
-import numpy as np
 import matplotlib.pyplot as plt
+import numpy as np
 
-'''
-Run the program and consider the following questions:
-1. Look at the data points on the graph. Do age and blood pressure appear to have a linear relationship?
-2. What does the value of r tell you about the relationship between age and blood pressure?
-'''
+plt.style.use('_mpl-gallery')
 
-data = pd.read_csv("part1-linear-regression/blood_pressure_data.csv")
-x = data["Age"]
-y = data["Blood Pressure"]
+# make data
+np.random.seed(1)
+x = 4 + np.random.normal(0, 1.5, 200)
 
-#sets the size of the graph
-plt.figure(figsize=(5,4))
+# plot:
+fig, ax = plt.subplots()
 
-#labels axes and creates scatterplot
-plt.xlabel("Age")
-plt.ylabel("Systolic Blood Pressure")
-plt.title("Systolic Blood Pressure by Age")
-plt.scatter(x, y)
+ax.hist(x, bins=8, linewidth=0.5, edgecolor="white")
 
-print("Pearson's Correlation: r = :", x.corr(y))
+ax.set(xlim=(0, 8), xticks=np.arange(1, 8),
+       ylim=(0, 56), yticks=np.linspace(0, 56, 9))
 
 plt.show()
