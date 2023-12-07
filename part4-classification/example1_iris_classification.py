@@ -4,6 +4,7 @@ import pandas as pd
 from sklearn import linear_model
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
+import matplotlib.pyplot as plt
 
 #accesses the data, sets the species to numerical values, and creates x and y variables
 #Irirs-setosa = 0
@@ -51,3 +52,10 @@ for index in range(len(x_test)):
         actual = "Iris-versicolor"
     print("Predicted Species: " + y_pred + " Actual Species: " + actual)
     print("")
+
+
+
+a = [9, 3, 4, 5,6, 7, 8]
+b = [10, 2, 3, 4, 5, 6, 7]
+plt.scatter(a, b)
+plt.show()

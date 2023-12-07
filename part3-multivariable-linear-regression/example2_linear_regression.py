@@ -11,20 +11,17 @@ from sklearn.model_selection import train_test_split
 # imports the data and sets x and y values
 data = pd.read_csv("part3-multivariable-linear-regression/antelope_data.csv")
 x = data[["Adult Population", "Annual Precipitation", "Winter Severity"]].values
-print(x)
 y = data["Fawn"].values
-
 
 # separates the data into training and testing sets
 xtrain, xtest, ytrain, ytest = train_test_split(x, y, test_size = .2)
 
 # # reshape the xtrain data into a 2D array
-# xtrain = xtrain.reshape(-1, 1)
+# xtrain = xtrain.reshape(-1, 1) Not needed since the data is already in the eray
 
 # create the linear regression model using the training data
 model = LinearRegression().fit(xtrain, ytrain)
-
-# get the coef_, intercept_ valuesm and r^2 values
+# get the coef_, intercept_ values and r^2 values
 # use float() to turn the arrays into a single float value
 coef = np.around(model.coef_, 2)
 intercept = round(float(model.intercept_), 2)
@@ -50,4 +47,3 @@ for index in range(len(xtest)):
     actual = ytest[index] # gets the actual y value from the ytest dataset
     predicted_y = predict[index] # gets the predicted y value from the predict variable
     x_coord = xtest[index] # gets the x value from the xtest dataset
-    print(f"Adult Population: {x_coord[0]} Annual Percipitation: {x_coord[1]} Winter Severity: {x_coord[2]} Actual: {actual} Predicted: {predicted_y}")
