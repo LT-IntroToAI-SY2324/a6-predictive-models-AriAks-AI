@@ -25,3 +25,29 @@ print("***************")
 print("Testing Results")
 print(f"Model's Linear Equation: y={coef[0]}x1 + {coef[1]}x2+ {intercept}")
 print("R Squared value:", r_squared)
+'''
+x = x.reshape(-1, 1)
+predict = model.predict(10000)
+predict = np.around(predict, 2)
+print(predict)'''
+
+
+#all of the predicition work
+xtest = list(xtest)
+xtest.append([89000, 10])
+xtest.append([150000, 20])
+
+ytest = list(ytest)
+ytest.append(89000)
+ytest.append(150000)
+
+
+predict = model.predict(xtest)
+predict = np.around(predict, 2)
+print(predict)
+
+for index in range(len(xtest)):
+    actual = ytest[index]
+    predicted_y = predict[index]
+    x_coord = xtest[index]
+    print(f"Miles: {x_coord[0]} Age: {x_coord[1]} Actual: {actual} Predicted: {predicted_y}")

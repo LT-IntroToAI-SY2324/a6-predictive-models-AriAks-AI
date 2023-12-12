@@ -6,6 +6,16 @@ from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 import matplotlib.pyplot as plt
 
+import tkinter as tk
+
+def on_button_click():
+    print("Button Clicked!")
+root = tk.Tk()
+root.title("Tkinter Button Example")
+button = tk.Button(root, text="Click Me!", command=on_button_click)
+button.pack()
+
+
 #accesses the data, sets the species to numerical values, and creates x and y variables
 #Irirs-setosa = 0
 #Iris-virginica = 1
@@ -54,8 +64,11 @@ for index in range(len(x_test)):
     print("")
 
 
+def change_graph():
+    print("hello")
 
 a = [9, 3, 4, 5,6, 7, 8]
 b = [10, 2, 3, 4, 5, 6, 7]
 plt.scatter(a, b)
 plt.show()
+
