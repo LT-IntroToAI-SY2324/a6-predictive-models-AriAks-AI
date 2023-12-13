@@ -13,9 +13,9 @@ y = data["Purchased"].values
 print("x is ", x)
 print("y is ", y)
 # Step 2: Standardize the data using StandardScaler, 
-#scale = StandardScaler().fit(x)
+scale = StandardScaler().fit(x)
 # Step 3: Transform the data
-#x = scale.transform(x)
+x = scale.transform(x)
 # Step 4: Split the data into training and testing data
 x_train, x_test, y_train, y_test = train_test_split(x, y)
 # Step 5: Fit the data
@@ -37,3 +37,12 @@ print(y_train)
 # custom_data = cscaler.transform(custom_data)
 # cprediction = model.predict(custom_data.reshape(-1, 3))[0]
 # print(cprediction)
+
+
+#mr bergs way of predicting
+myperson = [[34, 56000, 1]]
+#reshape in to a numpy array
+myperson
+mypredictionscalled= scale.transform(myperson)
+myprediction = model.predict(mypredictionscalled)
+print(myprediction)
