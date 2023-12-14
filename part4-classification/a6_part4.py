@@ -40,9 +40,8 @@ print(y_train)
 
 
 #mr bergs way of predicting
-myperson = [[34, 56000, 1]]
-#reshape in to a numpy array
-myperson
+myperson = [[34, 5600000, 1]]
+#reshape in to a numpy array if it is a single dimension
 mypredictionscalled= scale.transform(myperson)
 myprediction = model.predict(mypredictionscalled)
 print(myprediction)
