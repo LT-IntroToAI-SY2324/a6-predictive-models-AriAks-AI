@@ -31,7 +31,7 @@ x_predict = 43
 prediction = model.predict([[x_predict]])
 # Print out the prediction
 print("My prediction is " + str(prediction))
-plt.plot(x, coef*x + intercept, c="r", label = "line of best fit")
+plt.plot(x, coef*x + intercept, c="p", label = "line of best fit")
 # Create the model in matplotlib and include the line of best fit
 plt.show()
 
