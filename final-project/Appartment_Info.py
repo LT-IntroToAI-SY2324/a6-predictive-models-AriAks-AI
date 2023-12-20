@@ -44,6 +44,7 @@ for index in range(len(xtest)):
 #Print out all finished data
 print("the accuracy of the line is :", round(r_squared, 4))
 print("x value:", float(x_coord), "Predicted Y Value: ", predicted_y, "Actual Y Value: ", actual)
+print("the Coefieicent is", coef)
 '''
 num = [30000]
 for i in y2:
